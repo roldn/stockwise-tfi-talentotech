@@ -1,4 +1,4 @@
-from resultado_validacion import ResultadoValidacion
+from .resultado_validacion import ResultadoValidacion
 import re
 
 def validar_precio(valor, campo:str = "precio") -> ResultadoValidacion:
