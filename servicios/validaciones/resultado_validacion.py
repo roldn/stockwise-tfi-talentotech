@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 
 @dataclass
-class Resultadovalidacion:
+class ResultadoValidacion:
     campo: str
     valido: bool
     errores: list[str] = field(default_factory=list)
