@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from ..db.db_conexion import conexion
+from db.db_conexion import conexion
 
 class RepositorioBase(ABC):
     
@@ -10,19 +10,19 @@ class RepositorioBase(ABC):
         ...
 
     @abstractmethod
-    def esquema(self, fila) -> object:
+    def _from_row(self, fila) -> object:
         """Cada subclase convierte un Row de SQLite a su modelo."""
         ...
 
     def obtener_por_id(self, id:int):
         with conexion() as conn:
             fila = conn.execute(f"SELECT * FROM {self.tabla} WHERE id = ?", (id,)).fetchone()
-            return self.esquema(fila) if fila else None
+            return self._from_row(fila) if fila else None
     
     def obtener_todos(self,):
         with conexion() as conn:
             resultados = conn.execute(f"SELECT * FROM {self.tabla}")
-            return [self.esquema(elemento) for elemento in resultados]
+            return [self._from_row(elemento) for elemento in resultados]
         
     def borrar(self, id:int):
         with conexion() as conn:
