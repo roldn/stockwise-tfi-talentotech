@@ -69,9 +69,10 @@ resultado = validar_precio("299.99", campo="precio")
 
 | regla | descripción |
 |---|---|
-| 1 | No puede contener símbolos. |
-| 2 | No puede contener letras. |
-| 3 | Debe ser un número positivo mayor a cero. |
+| 1 | Debe ser int, float, o str convertible a float. |
+| 2 | Si es str, no puede estar vacío. |
+| 3 | Si es str, debe ser convertible a número válido. |
+| 4 | Debe ser mayor o igual a cero. |
 
 ## Notas
 
