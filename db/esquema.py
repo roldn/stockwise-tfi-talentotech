@@ -5,7 +5,8 @@ with conexion() as conn:
     conn.execute('''
         CREATE TABLE IF NOT EXISTS categorias (
             id INTEGER PRIMARY KEY UNIQUE AUTOINCREMENT,
-            categoria TEXT NOT NULL UNIQUE,
+            nombre TEXT NOT NULL UNIQUE,
+            descripcion TEXT
         )
     ''')
     
@@ -16,8 +17,8 @@ with conexion() as conn:
             descripcion,
             cantidad REAL,
             precio REAL,
-            categoria_fk INTEGER,
-            FOREIGN KEY (categoria_fk) REFERENCES categorias(id)   
+            categoria_id INTEGER,
+            FOREIGN KEY (categoria_id) REFERENCES categorias(id)   
         )
     ''')
 
