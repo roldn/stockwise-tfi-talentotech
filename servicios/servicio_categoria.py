@@ -1,7 +1,7 @@
-from ..repositorios.repositorio_categorias import RepositorioCategoria
+from repositorios.repositorio_categorias import RepositorioCategoria
 from .servicio_base import ServicioBase
 from .validaciones import validadores_texto
-from ..modelos.categoria import Categoria
+from modelos.categoria import Categoria
 
 class ServicioCategoria(ServicioBase):
     def __init__(self):
