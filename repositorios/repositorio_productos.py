@@ -43,4 +43,6 @@ class RepositorioProducto(RepositorioBase):
             )
 
         with conexion() as conn:
-            conn.execute(query, params)
+            cursor = conn.execute(query, params)
+            if prod.id is not None and cursor.rowcount == 0:
+                raise ValueError(f"No existe un producto con id={prod.id}")
