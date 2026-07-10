@@ -1,8 +1,9 @@
-from ..repositorios.repositorio_productos import RepositorioProducto
+from repositorios.repositorio_productos import RepositorioProducto
 from .servicio_categoria import ServicioCategoria
 from .servicio_base import ServicioBase
-from ..modelos.producto import Producto
-from .validaciones import validadores_numericos, validadores_texto
+from modelos.producto import Producto
+from .validaciones.validadores_texto import validar_texto
+from .validaciones.validadores_numericos import validar_precio
 
 
 class ServicioProducto(ServicioBase):
