@@ -2,16 +2,13 @@ from .resultado_validacion import ResultadoValidacion
 import re
 
 def validar_precio(valor, campo:str = "precio") -> ResultadoValidacion:
-    
     """
-        Validaciones - Campo de Texto:
-    
-        Reglas:
-            1. Debe ser un numero (in o float).
-            2. debe ser positivo.
-            3. No puede ser cero. 
+    Regla de Validacion - Campo de Precio:
+        1. Debe ser int, float, o str convertible a float.
+        2. Si es str, no puede estar vacío.
+        3. Si es str, debe ser convertible a número válido.
+        4. Debe ser mayor o igual a cero.
     """
-
     errores: list[str] = []
 
     contiene_simbolos = re.compile(r"[^a-zA-Z0-9]")
