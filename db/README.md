@@ -7,9 +7,10 @@ Módulo de base de datos para el sistema de inventario. Gestiona la conexión a 
 ```
 db/
 ├── __init__.py
-├── config.py        # Constantes globales: ruta de la DB y menús
-├── db_conexion.py   # Context manager para la conexión a SQLite
-└── esquema.py       # Creación de tablas (ejecutar una sola vez)
+├── config.py            # Constantes globales: ruta de la DB y menús
+├── datos_iniciales.py   # Creación de datos iniciales
+├── db_conexion.py       # Context manager para la conexión a SQLite
+└── esquema.py           # Creación de tablas (ejecutar una sola vez)
 ```
 
 ## Archivos
@@ -28,19 +29,19 @@ with conexion() as conn:
 ```
 
 ### `esquema.py`
-Crea las tablas `categorias` y `productos` si no existen. Debe ejecutarse una sola vez al inicializar el proyecto.
+Crea las tablas `categorias` y `productos` si no existen. Se ejecuta automaticamente desde `App.py`.
 
-```bash
-python -m db.esquema
-```
+### `datos_iniciales.py`
+Popula las tablas `categorias` y `productos` con datos pre-definidos. Se ejecuta automaticamente desde `App.py`.
 
 ## Tablas
 
 **`categorias`**
-| columna   | tipo    | restricciones             |
-|-----------|---------|---------------------------|
-| id        | INTEGER | PRIMARY KEY AUTOINCREMENT |
-| categoria | TEXT    | NOT NULL, UNIQUE          |
+| columna     | tipo    | restricciones             |
+|-------------|---------|---------------------------|
+| id          | INTEGER | PRIMARY KEY AUTOINCREMENT |
+| nombre      | TEXT    | NOT NULL, UNIQUE          |
+| descripcion | TEXT    | -                         |
 
 **`productos`**
 | columna      | tipo    | restricciones                          |
@@ -50,7 +51,7 @@ python -m db.esquema
 | descripcion  | TEXT    | —                                      |
 | cantidad     | REAL    | —                                      |
 | precio       | REAL    | —                                      |
-| categoria_fk | INTEGER | FOREIGN KEY → categorias(id)           |
+| categoria_id | INTEGER | FOREIGN KEY → categorias(id)           |
 
 ## Requisitos
 
