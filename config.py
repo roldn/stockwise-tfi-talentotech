@@ -1,1 +1,4 @@
-DB_PATH = "trabajo-final-integrador/base de datos/inventario.db"
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
+DB_PATH = BASE_DIR / "db" / "inventario.db"
