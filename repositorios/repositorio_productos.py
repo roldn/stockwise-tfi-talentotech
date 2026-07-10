@@ -1,6 +1,6 @@
 from .repositorio_base import RepositorioBase
-from ..db.db_conexion import conexion
-from ..modelos.producto import Producto
+from db.db_conexion import conexion
+from modelos.producto import Producto
 
 class RepositorioProducto(RepositorioBase):
 
@@ -8,14 +8,14 @@ class RepositorioProducto(RepositorioBase):
     def tabla(self) -> str:
         return "productos"
     
-    def esquema(self, fila: Producto):
+    def _from_row(self, fila: Producto):
         return Producto(
             id = fila["id"],
             nombre = fila["nombre"],
             descripcion = fila["descripcion"],
             cantidad = fila["cantidad"],
             precio = fila["precio"],
-            categoria_fk = fila["categoria"],
+            categoria_id = fila["categoria_id"],
         )
     
     def guardar(self, prod: Producto):
