@@ -2,5 +2,6 @@ from dataclasses import dataclass
 
 @dataclass
 class Categoria:
-    categoria: str
+    nombre: str
+    descripcion: str | None = None
     id: int | None = None
