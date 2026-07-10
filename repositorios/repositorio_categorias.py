@@ -8,7 +8,7 @@ class RepositorioCategoria(RepositorioBase):
     def tabla(self) -> str:
         return "categorias"
     
-    def esquema(self, fila):
+    def _from_row(self, fila):
         return Categoria(
             id = fila["id"],
             categoria = fila["categoria"]
