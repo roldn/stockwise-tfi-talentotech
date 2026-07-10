@@ -54,7 +54,7 @@ nuevo = Producto(
 | descripcion | str        | Descripción opcional del producto.       |
 | cantidad    | int        | Stock disponible.                        |
 | precio      | float      | Precio unitario.                         |
-| categoria_fk | int       | ID de la categoría asociada. Referencia a `categorias.id`. |
+| categoria_id | int       | ID de la categoría asociada. Referencia a `categorias.id`. |
 | id          | int / None | ID en la base de datos. None antes de insertar. |
 
 ## Notas
