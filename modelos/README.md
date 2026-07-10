@@ -24,10 +24,11 @@ nueva = Categoria(categoria="Electrónica")
 existente = Categoria(categoria="Electrónica", id=1)
 ```
 
-| atributo  | tipo       | descripción                              |
-|-----------|------------|------------------------------------------|
-| categoria | str        | Nombre de la categoría. Requerido.       |
-| id        | int / None | ID en la base de datos. None antes de insertar. |
+| atributo    | tipo       | descripción                                     |
+|-------------|------------|-------------------------------------------------|
+| nombre      | str        | Nombre de la categoría. Requerido.              |
+| descripcion | str / None | Descripcion de la categoría. No requerido.      |
+| id          | int / None | ID en la base de datos. None antes de insertar. |
 
 ---
 
