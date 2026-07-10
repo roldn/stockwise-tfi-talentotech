@@ -8,13 +8,13 @@ PATRON_TXT = re.compile(r"^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+$")
 
 def validar_texto(texto: str, campo:str = 'nombre') -> Resultadovalidacion:
     """
-        Regla de Validacion - Campo de Texto:
-        
-            1. Debe ser str
-            2. No puede estar vacio ni ser solo espacio
-            3. Longitud: entre TXT_MIN y TXT_MAX caracteres
-            4. Solo letras (incluye tildes, ñ, ü), espacios, guiones, y apostrofes.
-            5. No puede empezar ni terminar con espacios, guion, o apostrofes.
+    Regla de Validacion - Campo de Texto:
+    
+        1. Debe ser str
+        2. No puede estar vacio ni ser solo espacio
+        3. Longitud: entre TXT_MIN y TXT_MAX caracteres
+        4. Solo letras (incluye tildes, ñ, ü), espacios, guiones, y apostrofes.
+        5. No puede empezar ni terminar con espacios, guion, o apostrofes.
     """
     
     errores: list[str] = []
@@ -49,8 +49,4 @@ def validar_texto(texto: str, campo:str = 'nombre') -> Resultadovalidacion:
     if valor and valor[-1] in ("-", "'"):
         errores.append("No puede terminar con guion o apostrofe.")
 
-    return Resultadovalidacion(
-        campo=campo,
-        valido=not errores,
-        errores=errores
-    )
+    return Resultadovalidacion(campo=campo, valido=not errores, errores=errores)
