@@ -21,7 +21,7 @@ Clase abstracta que define las operaciones comunes a todas las entidades. No se 
 | método | descripción |
 |---|---|
 | `tabla` | Propiedad abstracta. Cada subclase retorna el nombre de su tabla. |
-| `esquema(fila)` | Método abstracto. Convierte un `sqlite3.Row` al modelo correspondiente. |
+| `_from_row(fila)` | Método abstracto. Convierte un `sqlite3.Row` al modelo correspondiente. |
 | `obtener_por_id(id)` | Retorna el objeto con ese ID o `None` si no existe. |
 | `obtener_todos()` | Retorna una lista con todos los registros de la tabla. |
 | `borrar(id)` | Elimina el registro con ese ID. |
@@ -82,7 +82,7 @@ repo.guardar(Producto(
     descripcion="Full HD 144Hz",
     cantidad=5,
     precio=399.99,
-    categoria_fk=1
+    categoria_id=1
 ))
 
 # Buscar
