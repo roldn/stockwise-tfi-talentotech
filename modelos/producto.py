@@ -6,5 +6,5 @@ class Producto:
     descripcion: str
     cantidad: int
     precio: float
-    categoria_fk: int
+    categoria_id: int
     id: int | None = None 
