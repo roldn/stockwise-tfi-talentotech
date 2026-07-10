@@ -17,9 +17,12 @@ class ServicioCategoria(ServicioBase):
         return categoria
     
     def guardar(self, datos: dict) -> None:
-        self._lanzar_error_si_resultado_es_invalido(validadores_texto(datos.get("nombre", ""), "nombre"))
+        self._lanzar_error_si_resultado_es_invalido(
+            validadores_texto(datos.get("nombre", ""), "nombre")
+        )
         categoria = Categoria(
-            categoria=datos["nombre"].strip(),
+            id=datos.get("id"),
+            nombre=datos["nombre"].strip(),
         )
         self._repo.guardar(categoria)
 
