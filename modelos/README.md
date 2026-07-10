@@ -44,7 +44,7 @@ nuevo = Producto(
     descripcion="Full HD 75Hz",
     cantidad=10,
     precio=299.99,
-    categoria_fk=1
+    categoria_id=1
 )
 ```
 
