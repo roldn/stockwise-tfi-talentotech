@@ -55,13 +55,10 @@ class VistaProductos(tk.Frame):
         productos = self._servicio.obtener_todos()
         categorias = {c.id: c.nombre for c in self._servicio_categoria.obtener_todos()}
 
+        # Filtro por nombre
         busqueda = self._var_busqueda.get().strip().lower()
         if busqueda:
-            productos = [
-                p for p in productos
-                if busqueda in p.nombre.lower()
-                or busqueda in categorias.get(p.categoria_id, "").lower()
-            ]
+            productos = [p for p in productos if busqueda in p.nombre.lower()]
 
         self._tabla.cargar([
             (p.id, p.nombre, p.precio, p.cantidad, categorias.get(p.categoria_id, "Sin categoría"))
