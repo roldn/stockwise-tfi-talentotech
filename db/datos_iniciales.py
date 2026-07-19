@@ -8,14 +8,14 @@ def cargar_datos_iniciales() -> None:
             return
 
         categorias = [
-            ("Muebles",),
-            ("Electrónica",),
-            ("Librería",),
-            ("Limpieza",),
-            ("Indumentaria",),
+            ("Muebles",       "Muebles y mobiliario en general"),
+            ("Electrónica",   "Equipos y dispositivos electrónicos"),
+            ("Librería",      "Artículos de librería y papelería"),
+            ("Limpieza",      "Productos de limpieza e higiene"),
+            ("Indumentaria",  "Ropa y accesorios"),
         ]
         conn.executemany(
-            "INSERT INTO categorias (nombre) VALUES (?)",
+            "INSERT INTO categorias (nombre, descripcion) VALUES (?, ?)",
             categorias
         )
 
