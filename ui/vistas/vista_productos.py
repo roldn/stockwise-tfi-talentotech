@@ -55,6 +55,13 @@ class VistaProductos(tk.Frame):
         productos = self._servicio.obtener_todos()
         categorias = {c.id: c.nombre for c in self._servicio_categoria.obtener_todos()}
 
+        # Actualizar opciones del dropdown
+        opciones = ["Todas"] + sorted(categorias.values())
+        menu = self._menu_categoria["menu"]
+        menu.delete(0, "end")
+        for opcion in opciones:
+            menu.add_command(label=opcion, command=lambda o=opcion: (self._var_categoria.set(o), self.actualizar()))
+        
         # Filtro por nombre
         busqueda = self._var_busqueda.get().strip().lower()
         if busqueda:
