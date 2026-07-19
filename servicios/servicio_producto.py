@@ -21,8 +21,8 @@ class ServicioProducto(ServicioBase):
         return producto
     
     def guardar(self, datos:dict) -> None:
-        self._lanzar_error_si_resultado_es_invalido(validadores_texto(datos.get("nombre", ""), "nombre"))
-        self._lanzar_error_si_resultado_es_invalido(validadores_numericos(datos.get("precio", ""), "precio"))
+        self._lanzar_error_si_resultado_es_invalido(validar_texto(datos.get("nombre", ""), "nombre"))
+        self._lanzar_error_si_resultado_es_invalido(validar_precio(datos.get("precio", ""), "precio"))
 
         # valida que la categoria exista antes de guardar
         self._servicio_categoria.obtener_por_id(datos["categoria_id"])
