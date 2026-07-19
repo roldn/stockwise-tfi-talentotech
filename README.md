@@ -19,32 +19,11 @@ Sistema de gestión de inventario de escritorio desarrollado en Python, con inte
 
 ## Capturas
 
-<table>
-  <tr>
-    <td><img src="capturas/productos.png" alt="Vista de productos"/></td>
-    <td><img src="capturas/busqueda.png" alt="Búsqueda en tiempo real"/></td>
-  </tr>
-  <tr>
-    <td align="center"><em>Vista de productos</em></td>
-    <td align="center"><em>Búsqueda en tiempo real</em></td>
-  </tr>
-  <tr>
-    <td><img src="capturas/nuevo_producto.png" alt="Nuevo producto"/></td>
-    <td><img src="capturas/editar_producto.png" alt="Editar producto"/></td>
-  </tr>
-  <tr>
-    <td align="center"><em>Formulario nuevo producto</em></td>
-    <td align="center"><em>Formulario edición</em></td>
-  </tr>
-  <tr>
-    <td><img src="capturas/categorias.png" alt="Categorías"/></td>
-    <td><img src="capturas/borrado.png" alt="Confirmación de borrado"/></td>
-  </tr>
-  <tr>
-    <td align="center"><em>Vista de categorías</em></td>
-    <td align="center"><em>Confirmación de borrado</em></td>
-  </tr>
-</table>
+![StockFlow](capturas/productos.png)
+
+> GIF de demostración
+
+![Demo](capturas/demo.gif)
 
 ---
 
