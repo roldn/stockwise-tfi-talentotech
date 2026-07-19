@@ -11,7 +11,7 @@ class RepositorioCategoria(RepositorioBase):
     def _from_row(self, fila):
         return Categoria(
             id = fila["id"],
-            categoria = fila["categoria"]
+            nombre = fila["nombre"]
         )
     
     def guardar(self, cat: Categoria) -> None:
