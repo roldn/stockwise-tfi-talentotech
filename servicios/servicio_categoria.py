@@ -1,6 +1,6 @@
 from repositorios.repositorio_categorias import RepositorioCategoria
 from .servicio_base import ServicioBase
-from .validaciones import validadores_texto
+from .validaciones.validadores_texto import validar_texto
 from modelos.categoria import Categoria
 
 class ServicioCategoria(ServicioBase):
@@ -18,11 +18,12 @@ class ServicioCategoria(ServicioBase):
     
     def guardar(self, datos: dict) -> None:
         self._lanzar_error_si_resultado_es_invalido(
-            validadores_texto(datos.get("nombre", ""), "nombre")
+            validar_texto(datos.get("nombre", ""), "nombre")
         )
         categoria = Categoria(
             id=datos.get("id"),
             nombre=datos["nombre"].strip(),
+            descripcion=datos.get("descripcion", ""),
         )
         self._repo.guardar(categoria)
 
