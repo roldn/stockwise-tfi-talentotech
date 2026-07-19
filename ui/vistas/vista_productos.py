@@ -67,6 +67,11 @@ class VistaProductos(tk.Frame):
         if busqueda:
             productos = [p for p in productos if busqueda in p.nombre.lower()]
 
+        # Filtro por categoría
+        categoria_sel = self._var_categoria.get()
+        if categoria_sel != "Todas":
+            productos = [p for p in productos if categorias.get(p.categoria_id) == categoria_sel]
+        
         self._tabla.cargar([
             (p.id, p.nombre, p.precio, p.cantidad, categorias.get(p.categoria_id, "Sin categoría"))
             for p in productos
