@@ -24,7 +24,7 @@ class RepositorioProducto(RepositorioBase):
             params = (prod.nombre, prod.descripcion, prod.cantidad,
                       prod.precio, prod.categoria_id)
         else:
-            query = f"UPDATE {self.tabla} SET nombre = ?, descripcion = ?, cantidad = ?, precio = ?, categoria_id = ? WHERE id = ?", 
+            query = f"UPDATE {self.tabla} SET nombre = ?, descripcion = ?, cantidad = ?, precio = ?, categoria_id = ? WHERE id = ?" 
             params = (prod.nombre, prod.descripcion, prod.cantidad, prod.precio,
                       prod.categoria_id, prod.id)
 
