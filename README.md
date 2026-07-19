@@ -140,7 +140,7 @@ Cada capa solo habla con la inmediatamente inferior. La UI no toca repositorios.
 ```bash
 # Clonar el repositorio
 git clone https://github.com/roldn/stockflow.git
-cd stockflow
+cd stockflow-tfi-talentotech
 
 # No requiere dependencias externas — solo stdlib de Python
 
