@@ -1,4 +1,4 @@
-from .resultado_validacion import Resultadovalidacion
+from servicios.validaciones.resultado_validacion import ResultadoValidacion
 import re
 
 TXT_MIN = 2
@@ -6,7 +6,7 @@ TXT_MAX = 50
 
 PATRON_TXT = re.compile(r"^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+$")
 
-def validar_texto(texto: str, campo:str = 'nombre') -> Resultadovalidacion:
+def validar_texto(texto: str, campo:str = 'nombre') -> ResultadoValidacion:
     """
     Regla de Validacion - Campo de Texto:
     
@@ -49,4 +49,4 @@ def validar_texto(texto: str, campo:str = 'nombre') -> Resultadovalidacion:
     if valor and valor[-1] in ("-", "'"):
         errores.append("No puede terminar con guion o apostrofe.")
 
-    return Resultadovalidacion(campo=campo, valido=not errores, errores=errores)
+    return ResultadoValidacion(campo=campo, valido=not errores, errores=errores)
