@@ -23,7 +23,7 @@ class RepositorioProducto(RepositorioBase):
         params: tuple
 
         if prod.id is None:
-            query = f"INSERT INTO {self.tabla} (nombre, descripcion, cantidad, precio, categoria_id) VALUES (?, ?, ?, ?, ?,)"
+            query = f"INSERT INTO {self.tabla} (nombre, descripcion, cantidad, precio, categoria_id) VALUES (?, ?, ?, ?, ?)"
             params = (
                 prod.nombre,
                 prod.descripcion,
