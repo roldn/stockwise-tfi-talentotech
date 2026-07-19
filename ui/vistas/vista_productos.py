@@ -29,6 +29,18 @@ class VistaProductos(tk.Frame):
         self._var_busqueda.trace_add("write", lambda *_: self.actualizar())
         tk.Entry(barra, textvariable=self._var_busqueda, width=30).pack(side="left")
 
+        # Filtro por categoría
+        tk.Label(barra, text="Categoría:").pack(side="left", padx=(12, 6))
+        self._var_categoria = tk.StringVar(value="Todas")
+        self._opciones_categoria = ["Todas"]
+        self._menu_categoria = tk.OptionMenu(
+            barra,
+            self._var_categoria,
+            *self._opciones_categoria,
+            command=lambda _: self.actualizar(),
+        )
+        self._menu_categoria.pack(side="left")
+
         # Tabla
         self._tabla = Tabla(
             self,
