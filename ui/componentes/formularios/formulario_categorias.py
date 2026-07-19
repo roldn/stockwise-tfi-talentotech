@@ -65,7 +65,7 @@ class FormularioCategoria(tk.Toplevel):
         self._on_guardar({
             "id": self._datos.get("id"),
             "nombre": valores["nombre"],
-            "descripcion": self._descripcion.get("1.0", "end-1c").strip(),
+            "descripcion": self._descripcion.get("1.0", tk.END).rstrip("\n").strip(),
         })
         self.destroy()
 
