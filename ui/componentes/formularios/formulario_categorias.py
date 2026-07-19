@@ -40,9 +40,9 @@ class FormularioCategoria(tk.Toplevel):
 
     def _precargar_datos(self):
         if "nombre" in self._datos:
-            self._nombre.insert(0, self._datos["nombre"])
+            self._nombre.insert(0, self._datos["nombre"] or "")
         if "descripcion" in self._datos:
-            self._descripcion.insert("1.0", self._datos.get("descripcion", ""))
+            self._descripcion.insert("1.0", self._datos.get("descripcion") or "")
 
     def _limpiar_errores(self):
         self._err_nombre.config(text="")
